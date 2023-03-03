@@ -15,11 +15,17 @@ on:
   pull_request:
     branches: [ "main" ]
 
+
+matrix:
+  os: [ubuntu-latest, windows-latest, macos-latest]
+
 jobs:
   build:
-
-    runs-on: [ubuntu-latest, windows-latest, macos-latest]
-
+    runs-on:  ${{matrix.os}}
+    strategy:
+        matrix:
+          os: [10, 12, 14]
+        
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
