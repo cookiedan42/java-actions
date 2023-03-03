@@ -31,7 +31,5 @@ public class UserControllerTest {
         else{
             assertEquals("John\n", userName);
         }
-
-
     }
 }
